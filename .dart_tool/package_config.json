@@ -8,6 +8,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "blurrycontainer",
+      "rootUri": "file:///C:/Users/rrivenino/AppData/Local/Pub/Cache/hosted/pub.dev/blurrycontainer-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///C:/Users/rrivenino/AppData/Local/Pub/Cache/hosted/pub.dev/boolean_selector-2.1.1",
       "packageUri": "lib/",
@@ -182,7 +188,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-05-22T19:24:54.109916Z",
+  "generated": "2024-05-22T23:27:36.622282Z",
   "generator": "pub",
   "generatorVersion": "3.4.0",
   "flutterRoot": "file:///C:/Users/rrivenino/AppData/Local/flutter",

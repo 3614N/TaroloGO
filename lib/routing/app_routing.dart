@@ -3,7 +3,7 @@ import 'package:tarologo/screens/main_screen.dart';
 import 'package:tarologo/screens/other/chat.dart';
 import 'package:tarologo/screens/other/favorites.dart';
 import 'package:tarologo/screens/other/profile.dart';
-import 'package:tarologo/screens/other/services.dart';
+import 'package:tarologo/screens/other/service/services.dart';
 
 final router = GoRouter(
   initialLocation: '/search',

@@ -1,0 +1,1 @@
+ C:\\Projects\\reps\\TaroloGO\\.dart_tool\\flutter_build\\835cbd7323671a32b96fcd71d1a5a7cd\\native_assets.yaml: 

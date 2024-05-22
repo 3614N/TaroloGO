@@ -1,4 +1,4 @@
-#Wed May 22 20:49:07 MSK 2024
+#Thu May 23 02:36:38 MSK 2024
 base.0=C\:\\Projects\\reps\\TaroloGO\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Projects\\reps\\TaroloGO\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Projects\\reps\\TaroloGO\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex

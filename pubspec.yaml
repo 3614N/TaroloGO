@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   go_router: ^14.1.2
+  blurrycontainer: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -28,5 +29,6 @@ flutter:
     - assets/tarot_photos/8.jpg
     - assets/tarot_photos/9.jpg
     - assets/tarot_photos/10.jpg
+    - assets/tarot_photos/vova.png
     - assets/profile_photo/SLONYARA.jpg
   uses-material-design: true

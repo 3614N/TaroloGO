@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
@@ -88,26 +88,137 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Column(
               children: [
                 Container(
-                  height: 45,
+                  height: 55,
                   child: Column(
-                    children: [goodLine],
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(15, 8, 0, 0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '+7(800)555-35-35',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                            Text(
+                              'Номер телефона',
+                              style: TextStyle(
+                                color: Color(0xFF8C8C8C),
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      goodLine
+                    ],
                   ),
                 ),
                 Container(
-                  height: 45,
+                  height: 55,
                   child: Column(
-                    children: [goodLine],
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(15, 8, 0, 0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'zazastore@mail.ru',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                            Text(
+                              'Почта',
+                              style: TextStyle(
+                                color: Color(0xFF8C8C8C),
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      goodLine
+                    ],
                   ),
                 ),
                 Container(
-                  height: 45,
+                  height: 55,
                   child: Column(
-                    children: [goodLine],
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(15, 8, 0, 0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '11.09.2001',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                            Text(
+                              'Дата рождения',
+                              style: TextStyle(
+                                color: Color(0xFF8C8C8C),
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      goodLine
+                    ],
                   ),
                 ),
-                Container(
-                  child: Column(),
-                ),
+                IntrinsicHeight(
+                  child: Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(15, 8, 0, 0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Мою писю, брею писю, я негритоска, гадаю на таро и делаю теракты, гадаю на успешность терракта, гадаю на скорейший выход мужа из тюрьми, гадаю на благополучие черных тем',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              Text(
+                                'Биография',
+                                style: TextStyle(
+                                  color: Color(0xFF8C8C8C),
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 6.5,
+                        ),
+                        goodLine,
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),

@@ -53,7 +53,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                         borderRadius: BorderRadius.circular(90),
                         child: FittedBox(
                           child: widget.userPhoto,
-                          fit: BoxFit.fill,
+                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
@@ -75,7 +75,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                           height: 5,
                         ),
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.7,
+                          width: MediaQuery.of(context).size.width * 0.65,
                           child: Flexible(
                             child: Expanded(
                               child: Text(
@@ -91,21 +91,24 @@ class _ChatWidgetState extends State<ChatWidget> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 80,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    // Icon(
-                    //   Icons.check,
-                    //   color: yellowText,
-                    //   size: 15,
-                    // ),
-                    Text(
-                      widget.lastMessageTime,
-                      style: TextStyle(color: yellowText, fontSize: 12),
-                    ),
-                  ],
+              Padding(
+                padding: const EdgeInsets.only(right: 5),
+                child: SizedBox(
+                  height: 80,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      // Icon(
+                      //   Icons.check,
+                      //   color: yellowText,
+                      //   size: 15,
+                      // ),
+                      Text(
+                        widget.lastMessageTime,
+                        style: TextStyle(color: yellowText, fontSize: 12),
+                      ),
+                    ],
+                  ),
                 ),
               )
             ],
