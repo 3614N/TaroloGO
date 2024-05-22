@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:go_router/go_router.dart';
-import 'package:tarologo/screens/other/services.dart';
 import 'package:tarologo/styles/colors/text_colors.dart';
 import 'package:tarologo/styles/salomon_bottom_bar.dart';
 import 'package:flutter/material.dart';

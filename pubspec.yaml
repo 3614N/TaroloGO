@@ -17,4 +17,15 @@ dev_dependencies:
   flutter_lints: ^4.0.0
 
 flutter:
+  assets:
+    - assets/tarot_photos/1.jpg
+    - assets/tarot_photos/2.jpg
+    - assets/tarot_photos/3.jpg
+    - assets/tarot_photos/4.jpg
+    - assets/tarot_photos/5.jpg
+    - assets/tarot_photos/6.jpg
+    - assets/tarot_photos/7.jpg
+    - assets/tarot_photos/8.jpg
+    - assets/tarot_photos/9.jpg
+    - assets/tarot_photos/10.jpg
   uses-material-design: true
