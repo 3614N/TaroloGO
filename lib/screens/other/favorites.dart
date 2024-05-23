@@ -16,12 +16,15 @@ class _FavoritesPageState extends State<FavoritesPage> {
         count,
         (index) => ServiceCard(
               context: context,
-              tarotPhoto: likedServiceCards[index].tarotPhoto,
-              tarotName: likedServiceCards[index].tarotName,
-              tarotDescription: likedServiceCards[index].tarotDescription,
-              reviewCount: likedServiceCards[index].reviewCount,
-              rating: likedServiceCards[index].rating,
-              isLiked: likedServiceCards[index].isLiked,
+              tarotPhoto: profiles[index].tarotPhoto,
+              tarotFirstName: profiles[index].tarotFirstName,
+              tarotSecondName: profiles[index].tarotSecondName,
+              tarotNickname: profiles[index].tarotNickname,
+              tarotDescription: profiles[index].tarotDescription,
+              reviewCount: profiles[index].reviewCount,
+              rating: profiles[index].rating,
+              isLiked: profiles[index].isLiked,
+              services: profiles[index].services,
             ));
   }
 
@@ -32,7 +35,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            children: generateServices(likedServiceCards.length),
+            children: generateServices(profiles.length),
           ),
         ),
       ),

@@ -3,8 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/styles/colors/text_colors.dart';
-import 'package:tarologo/test_lists/message_list.dart';
-import 'package:tarologo/widgets/chat_widget.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
@@ -14,20 +12,6 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
-  List<Widget> generateChats(int count) {
-    return List.generate(
-      count,
-      (index) => ChatWidget(
-          userPhoto: messageCards[index].userPhoto,
-          userName: messageCards[index].userName,
-          lastMessage: messageCards[index].lastMessage,
-          lastMessageTime: messageCards[index].lastMessageTime,
-          isYourMessageLast: messageCards[index].isYourMessageLast,
-          isYourMessageChecked: messageCards[index].isYourMessageChecked,
-          context: context),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +49,7 @@ class _ChatPageState extends State<ChatPage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            children: generateChats(messageCards.length),
+            children: [],
           ),
         ),
       ),

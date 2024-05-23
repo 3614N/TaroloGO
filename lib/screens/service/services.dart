@@ -19,12 +19,15 @@ class _SearchPageState extends State<SearchPage> {
         count,
         (index) => ServiceCard(
               context: context,
-              tarotPhoto: serviceCards[index].tarotPhoto,
-              tarotName: serviceCards[index].tarotName,
-              tarotDescription: serviceCards[index].tarotDescription,
-              reviewCount: serviceCards[index].reviewCount,
-              rating: serviceCards[index].rating,
-              isLiked: serviceCards[index].isLiked,
+              tarotPhoto: profiles[index].tarotPhoto,
+              tarotFirstName: profiles[index].tarotFirstName,
+              tarotSecondName: profiles[index].tarotSecondName,
+              tarotNickname: profiles[index].tarotNickname,
+              tarotDescription: profiles[index].tarotDescription,
+              reviewCount: profiles[index].reviewCount,
+              rating: profiles[index].rating,
+              isLiked: profiles[index].isLiked,
+              services: profiles[index].services,
             ));
   }
 
@@ -69,7 +72,7 @@ class _SearchPageState extends State<SearchPage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            children: generateServices(10),
+            children: generateServices(profiles.length),
           ),
         ),
       ),

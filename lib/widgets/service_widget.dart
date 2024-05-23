@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
+import 'package:tarologo/classes/tarot_class.dart';
 import 'package:tarologo/screens/service/tarot_screen.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/styles/colors/text_colors.dart';
@@ -8,21 +9,27 @@ import 'package:tarologo/styles/icons/icons.dart';
 
 // ignore: must_be_immutable
 class ServiceCard extends StatefulWidget {
-  final Image tarotPhoto;
-  final String tarotName;
+  final String tarotPhoto;
+  final String tarotFirstName;
+  final String tarotSecondName;
+  final String tarotNickname;
   final String tarotDescription;
   final int reviewCount;
   final double rating;
   bool isLiked;
+  List<Service> services;
 
   ServiceCard({
     super.key,
     required this.tarotPhoto,
-    required this.tarotName,
+    required this.tarotFirstName,
+    required this.tarotSecondName,
+    required this.tarotNickname,
     required this.tarotDescription,
     required this.reviewCount,
     required this.rating,
     required this.isLiked,
+    required this.services,
     required BuildContext context,
   });
   @override
@@ -40,7 +47,16 @@ class _ServiceCardState extends State<ServiceCard> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) => TarotScreen()));
+                    builder: (BuildContext context) => TarotScreen(
+                        tarotPhoto: widget.tarotPhoto,
+                        tarotFirstName: widget.tarotFirstName,
+                        tarotSecondName: widget.tarotSecondName,
+                        tarotNickname: widget.tarotNickname,
+                        tarotDescription: widget.tarotDescription,
+                        reviewCount: widget.reviewCount,
+                        rating: widget.rating,
+                        isLiked: widget.isLiked,
+                        services: widget.services)));
           });
         },
         child: Container(
@@ -67,7 +83,7 @@ class _ServiceCardState extends State<ServiceCard> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: FittedBox(
-                        child: widget.tarotPhoto,
+                        child: Image.asset(widget.tarotPhoto),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -81,7 +97,9 @@ class _ServiceCardState extends State<ServiceCard> {
                       children: [
                         Container(
                           child: Text(
-                            widget.tarotName,
+                            widget.tarotFirstName +
+                                ' ' +
+                                widget.tarotSecondName,
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 19,
@@ -107,7 +125,6 @@ class _ServiceCardState extends State<ServiceCard> {
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.45,
                       child: Row(
-                        //crossAxisAlignment: CrossAxisAlignment.end,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
@@ -126,7 +143,6 @@ class _ServiceCardState extends State<ServiceCard> {
                               widget.rating.toString(),
                               style: TextStyle(
                                 color: Colors.white,
-                                //fontSize: 18,
                               ),
                             ),
                           ),

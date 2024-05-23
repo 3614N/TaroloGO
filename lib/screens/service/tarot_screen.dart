@@ -2,12 +2,35 @@
 
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/material.dart';
+import 'package:tarologo/classes/tarot_class.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/styles/colors/text_colors.dart';
 import 'package:tarologo/widgets/profile_service_widget.dart';
 
+// ignore: must_be_immutable
 class TarotScreen extends StatefulWidget {
-  const TarotScreen({super.key});
+  final String tarotPhoto;
+  final String tarotFirstName;
+  final String tarotSecondName;
+  final String tarotNickname;
+  final String tarotDescription;
+  final int reviewCount;
+  final double rating;
+  bool isLiked;
+  List<Service> services;
+
+  TarotScreen({
+    super.key,
+    required this.tarotPhoto,
+    required this.tarotFirstName,
+    required this.tarotSecondName,
+    required this.tarotNickname,
+    required this.tarotDescription,
+    required this.reviewCount,
+    required this.rating,
+    required this.isLiked,
+    required this.services,
+  });
 
   @override
   State<TarotScreen> createState() => _TarotScreenState();
@@ -31,7 +54,7 @@ class _TarotScreenState extends State<TarotScreen> {
               height: 350,
               width: double.infinity,
               child: Image.asset(
-                'assets/tarot_photos/3.jpg',
+                widget.tarotPhoto,
                 fit: BoxFit.cover,
               ),
             ),
@@ -58,7 +81,7 @@ class _TarotScreenState extends State<TarotScreen> {
                           Padding(
                             padding: const EdgeInsets.only(top: 12, bottom: 3),
                             child: Text(
-                              'Апполинария Тёмная',
+                              '${widget.tarotFirstName} ${widget.tarotSecondName}',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 22,
@@ -66,7 +89,7 @@ class _TarotScreenState extends State<TarotScreen> {
                             ),
                           ),
                           Text(
-                            '@minonch1k',
+                            widget.tarotNickname,
                             style: TextStyle(
                               color: yellowText,
                               fontSize: 15,
@@ -75,14 +98,6 @@ class _TarotScreenState extends State<TarotScreen> {
                           SizedBox(
                             height: 16,
                           ),
-                          // Padding(
-                          //   padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
-                          //   child: Container(
-                          //     width: double.infinity,
-                          //     height: 1,
-                          //     color: Colors.white.withOpacity(0.1),
-                          //   ),
-                          // ),
                           Container(
                             alignment: Alignment.center,
                             width: double.infinity,
@@ -118,7 +133,7 @@ class _TarotScreenState extends State<TarotScreen> {
                                       color: yellowText, fontSize: 18),
                                 ),
                                 Text(
-                                  'Гадаю на на картах таро, опыт 32 года, привороты, увороты, подвороты. Специалист по жизни, советчик и программист.',
+                                  widget.tarotDescription,
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 18),
                                 ),
