@@ -2,6 +2,7 @@ C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/icudtl.dat
 C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/flutter_windows.dll
 C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/flutter_assets/AssetManifest.bin
 C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/flutter_assets/assets/profile_photo/SLONYARA.jpg
 C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/flutter_assets/assets/tarot_photos/1.jpg
 C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/flutter_assets/assets/tarot_photos/10.jpg
 C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/flutter_assets/assets/tarot_photos/2.jpg
@@ -12,6 +13,7 @@ C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/flutter_assets/ass
 C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/flutter_assets/assets/tarot_photos/7.jpg
 C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/flutter_assets/assets/tarot_photos/8.jpg
 C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/flutter_assets/assets/tarot_photos/9.jpg
+C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/flutter_assets/assets/tarot_photos/vova.png
 C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/flutter_assets/FontManifest.json
 C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
 C:/Projects/reps/TaroloGO/build/windows/x64/runner/Debug/data/flutter_assets/kernel_blob.bin

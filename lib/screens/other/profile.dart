@@ -195,7 +195,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Мою писю, брею писю, я негритоска, гадаю на таро и делаю теракты, гадаю на успешность терракта, гадаю на скорейший выход мужа из тюрьми, гадаю на благополучие черных тем',
+                                'базированный миньон слонярович',
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,

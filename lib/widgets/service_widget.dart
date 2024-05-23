@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
-import 'package:tarologo/screens/other/service/tarot_screen.dart';
+import 'package:tarologo/screens/service/tarot_screen.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/styles/colors/text_colors.dart';
 import 'package:flutter/material.dart';
