@@ -5,40 +5,43 @@ import 'package:flutter/material.dart';
 import 'package:tarologo/classes/tarot_class.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/styles/colors/text_colors.dart';
-import 'package:tarologo/widgets/profile_service_widget.dart';
+import 'package:tarologo/styles/widgets/good_line.dart';
+import 'package:tarologo/widgets/profile/profile_service_card.dart';
 
 // ignore: must_be_immutable
-class TarotScreen extends StatefulWidget {
-  final String tarotPhoto;
-  final String tarotFirstName;
-  final String tarotSecondName;
-  final String tarotNickname;
-  final String tarotDescription;
+class TarotProfile extends StatefulWidget {
+  final int id;
+  final String photo;
+  final String firstName;
+  final String secondName;
+  final String username;
+  final String description;
   final int reviewCount;
   final double rating;
   bool isLiked;
   List<Service> services;
 
-  TarotScreen({
-    super.key,
-    required this.tarotPhoto,
-    required this.tarotFirstName,
-    required this.tarotSecondName,
-    required this.tarotNickname,
-    required this.tarotDescription,
-    required this.reviewCount,
-    required this.rating,
-    required this.isLiked,
-    required this.services,
-  });
+  TarotProfile(
+      {super.key,
+      required this.id,
+      required this.photo,
+      required this.firstName,
+      required this.secondName,
+      required this.username,
+      required this.description,
+      required this.reviewCount,
+      required this.rating,
+      required this.isLiked,
+      required this.services});
 
   @override
-  State<TarotScreen> createState() => _TarotScreenState();
+  State<TarotProfile> createState() => _TarotProfileState();
 }
 
-class _TarotScreenState extends State<TarotScreen> {
+class _TarotProfileState extends State<TarotProfile> {
   List<Widget> generateTarotServiceCards(int count) {
-    return List<Widget>.generate(count, (index) => const TarotServiceCard());
+    return List<Widget>.generate(
+        count, (index) => TarotService(service: widget.services[index]));
   }
 
   @override
@@ -54,7 +57,7 @@ class _TarotScreenState extends State<TarotScreen> {
               height: 350,
               width: double.infinity,
               child: Image.asset(
-                widget.tarotPhoto,
+                widget.photo,
                 fit: BoxFit.cover,
               ),
             ),
@@ -81,7 +84,7 @@ class _TarotScreenState extends State<TarotScreen> {
                           Padding(
                             padding: const EdgeInsets.only(top: 12, bottom: 3),
                             child: Text(
-                              '${widget.tarotFirstName} ${widget.tarotSecondName}',
+                              '${widget.firstName} ${widget.secondName}',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 22,
@@ -89,7 +92,7 @@ class _TarotScreenState extends State<TarotScreen> {
                             ),
                           ),
                           Text(
-                            widget.tarotNickname,
+                            widget.username,
                             style: TextStyle(
                               color: yellowText,
                               fontSize: 15,
@@ -116,11 +119,7 @@ class _TarotScreenState extends State<TarotScreen> {
                           ),
                           Padding(
                             padding: EdgeInsets.fromLTRB(0, 8, 0, 8),
-                            child: Container(
-                              width: double.infinity,
-                              height: 1,
-                              color: lightGreyGood,
-                            ),
+                            child: goodLine,
                           ),
                           SizedBox(
                             width: double.infinity,
@@ -133,22 +132,19 @@ class _TarotScreenState extends State<TarotScreen> {
                                       color: yellowText, fontSize: 18),
                                 ),
                                 Text(
-                                  widget.tarotDescription,
+                                  widget.description,
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 18),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(0, 8, 0, 8),
-                                  child: Container(
-                                    width: double.infinity,
-                                    height: 1,
-                                    color: lightGreyGood,
-                                  ),
+                                  child: goodLine,
                                 ),
                                 SizedBox(
                                   width: double.infinity,
                                   child: Column(
-                                    children: generateTarotServiceCards(10),
+                                    children: generateTarotServiceCards(
+                                        widget.services.length),
                                   ),
                                 )
                               ],

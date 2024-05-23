@@ -1,9 +1,9 @@
 import 'package:go_router/go_router.dart';
-import 'package:tarologo/screens/main_screen.dart';
+import 'package:tarologo/screens/navigation_bar.dart';
 import 'package:tarologo/screens/other/chat.dart';
 import 'package:tarologo/screens/other/favorites.dart';
 import 'package:tarologo/screens/other/profile.dart';
-import 'package:tarologo/screens/service/services.dart';
+import 'package:tarologo/screens/service/tarot_list.dart';
 
 final router = GoRouter(
   initialLocation: '/search',
@@ -11,7 +11,7 @@ final router = GoRouter(
     // BottomNavigationBar
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) =>
-          MainPage(navigationShell: navigationShell),
+          Navigation(navigationShell: navigationShell),
       branches: [
         StatefulShellBranch(
           routes: [
@@ -25,7 +25,7 @@ final router = GoRouter(
           routes: [
             GoRoute(
               path: '/favorites',
-              builder: (context, state) => const FavoritesPage(),
+              builder: (context, state) => const Favorites(),
             ),
           ],
         ),
@@ -33,7 +33,7 @@ final router = GoRouter(
           routes: [
             GoRoute(
               path: '/chat',
-              builder: (context, state) => const ChatPage(),
+              builder: (context, state) => const Chat(),
             ),
           ],
         ),
@@ -41,7 +41,7 @@ final router = GoRouter(
           routes: [
             GoRoute(
               path: '/profile',
-              builder: (context, state) => const ProfilePage(),
+              builder: (context, state) => const UserProfile(),
             ),
           ],
         ),

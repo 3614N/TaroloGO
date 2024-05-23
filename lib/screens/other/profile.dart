@@ -3,16 +3,16 @@
 import 'package:flutter/material.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/styles/colors/text_colors.dart';
-import 'package:tarologo/widgets/line.dart';
+import 'package:tarologo/styles/widgets/good_line.dart';
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+class UserProfile extends StatefulWidget {
+  const UserProfile({super.key});
 
   @override
-  State<ProfilePage> createState() => _ProfilePageState();
+  State<UserProfile> createState() => _UserProfileState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _UserProfileState extends State<UserProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

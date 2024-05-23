@@ -1,16 +1,18 @@
 import 'package:tarologo/classes/tarot_class.dart';
 
 Service firstEzoGadalka = Service(
+    id: 1,
     specialization: 'Экстрасенс',
     serviceName: 'Эзотерика',
     serviceDescription:
-        'совокупность знаний и сведений, недоступных непосвящённым, '
+        'Совокупность знаний и сведений, недоступных непосвящённым, '
         'несведущим в мистических учениях людям, а также особых способов '
         'восприятия реальности, которые имеют тайное содержание '
         'и выражение в «психодуховных практиках».',
     price: 500);
 
 Service firstTarotGadalka = Service(
+    id: 2,
     specialization: 'Таролог',
     serviceName: 'Таро Ленорман',
     serviceDescription:
@@ -21,6 +23,7 @@ Service firstTarotGadalka = Service(
     price: 500);
 
 Service firstGadalkaGadalka = Service(
+    id: 3,
     specialization: 'Гадалка',
     serviceName: 'Гадание на любовь',
     serviceDescription:

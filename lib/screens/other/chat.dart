@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/styles/colors/text_colors.dart';
 
-class ChatPage extends StatefulWidget {
-  const ChatPage({super.key});
+class Chat extends StatefulWidget {
+  const Chat({super.key});
 
   @override
-  State<ChatPage> createState() => _ChatPageState();
+  State<Chat> createState() => _ChatState();
 }
 
-class _ChatPageState extends State<ChatPage> {
+class _ChatState extends State<Chat> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

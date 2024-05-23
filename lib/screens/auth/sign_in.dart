@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatefulWidget {
-  const SignInPage({super.key});
+class SignIn extends StatefulWidget {
+  const SignIn({super.key});
 
   @override
-  State<SignInPage> createState() => _SignInPageState();
+  State<SignIn> createState() => _SignInState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold();

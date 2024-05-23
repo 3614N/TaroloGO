@@ -1,12 +1,14 @@
 //класс карточки таролога
 
 class Service {
+  int id;
   String specialization;
   String serviceName;
   String serviceDescription;
   int price;
 
   Service({
+    required this.id,
     required this.specialization,
     required this.serviceName,
     required this.serviceDescription,
@@ -15,22 +17,24 @@ class Service {
 }
 
 class Tarolog {
-  String tarotPhoto;
-  String tarotFirstName;
-  String tarotSecondName;
-  String tarotNickname;
-  String tarotDescription;
+  int id;
+  String photo;
+  String firstName;
+  String secondName;
+  String username;
+  String description;
   int reviewCount;
   double rating;
   bool isLiked;
   List<Service> services;
 
   Tarolog({
-    required this.tarotPhoto,
-    required this.tarotFirstName,
-    required this.tarotSecondName,
-    required this.tarotNickname,
-    required this.tarotDescription,
+    required this.id,
+    required this.photo,
+    required this.firstName,
+    required this.secondName,
+    required this.username,
+    required this.description,
     required this.reviewCount,
     required this.rating,
     required this.isLiked,
