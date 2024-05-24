@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:tarologo/screens/navigation_bar.dart';
-import 'package:tarologo/screens/other/chat.dart';
-import 'package:tarologo/screens/other/favorites.dart';
+import 'package:tarologo/screens/chat/messenger.dart';
+import 'package:tarologo/screens/service/favorites.dart';
 import 'package:tarologo/screens/other/profile.dart';
 import 'package:tarologo/screens/service/tarot_list.dart';
 
@@ -33,7 +33,7 @@ final router = GoRouter(
           routes: [
             GoRoute(
               path: '/chat',
-              builder: (context, state) => const Chat(),
+              builder: (context, state) => const Messenger(),
             ),
           ],
         ),

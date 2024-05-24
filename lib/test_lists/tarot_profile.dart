@@ -1,4 +1,4 @@
-import 'package:tarologo/classes/tarot_class.dart';
+import 'package:tarologo/classes/tarot.dart';
 import 'package:tarologo/test_lists/tarot_services.dart';
 
 List<Tarolog> profiles = [

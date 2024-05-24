@@ -2,7 +2,7 @@
 
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/material.dart';
-import 'package:tarologo/classes/tarot_class.dart';
+import 'package:tarologo/classes/tarot.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/styles/colors/text_colors.dart';
 import 'package:tarologo/styles/widgets/good_line.dart';
@@ -59,17 +59,6 @@ class _TarotProfileState extends State<TarotProfile> {
               child: Image.asset(
                 widget.photo,
                 fit: BoxFit.cover,
-              ),
-            ),
-            SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: IconButton(
-                  icon: Icon(Icons.arrow_back_ios_new_rounded),
-                  onPressed: () {
-                    Navigator.of(context).pop;
-                  },
-                ),
               ),
             ),
             Positioned(
@@ -165,6 +154,20 @@ class _TarotProfileState extends State<TarotProfile> {
                       ),
                     ),
                   ],
+                ),
+              ),
+            ),
+            SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: GestureDetector(
+                  child: Icon(
+                    Icons.arrow_back_ios_new_rounded,
+                    color: yellowText,
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
                 ),
               ),
             ),

@@ -4,6 +4,7 @@ import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/material.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/styles/colors/text_colors.dart';
+import 'package:tarologo/styles/text_styles/text_styles.dart';
 import 'package:tarologo/styles/widgets/good_line.dart';
 
 class UserProfile extends StatefulWidget {
@@ -60,18 +61,12 @@ class _UserProfileState extends State<UserProfile> {
                                       const EdgeInsets.only(top: 5, bottom: 2),
                                   child: Text(
                                     'Миньон Слонярович',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 22,
-                                    ),
+                                    style: profileName,
                                   ),
                                 ),
                                 Text(
                                   '@minyonchik',
-                                  style: TextStyle(
-                                    color: yellowText,
-                                    fontSize: 15,
-                                  ),
+                                  style: profileTag,
                                 ),
                               ],
                             ),
@@ -93,19 +88,11 @@ class _UserProfileState extends State<UserProfile> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        '+7 (951) 052-32-35',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                        ),
-                                      ),
+                                      Text('+7 (951) 052-32-35',
+                                          style: profileDescription),
                                       Text(
                                         'Номер телефона',
-                                        style: TextStyle(
-                                          color: lightGreyGood,
-                                          fontSize: 15,
-                                        ),
+                                        style: profileNameDescription,
                                       ),
                                     ],
                                   ),
@@ -121,19 +108,11 @@ class _UserProfileState extends State<UserProfile> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        'kraken@proton.me',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                        ),
-                                      ),
+                                      Text('kraken@proton.me',
+                                          style: profileDescription),
                                       Text(
                                         'Почта',
-                                        style: TextStyle(
-                                          color: lightGreyGood,
-                                          fontSize: 15,
-                                        ),
+                                        style: profileNameDescription,
                                       ),
                                     ],
                                   ),
@@ -149,19 +128,11 @@ class _UserProfileState extends State<UserProfile> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        '11.09.2001',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                        ),
-                                      ),
+                                      Text('11.09.2001',
+                                          style: profileDescription),
                                       Text(
                                         'Дата рождения',
-                                        style: TextStyle(
-                                          color: lightGreyGood,
-                                          fontSize: 15,
-                                        ),
+                                        style: profileNameDescription,
                                       ),
                                     ],
                                   ),
@@ -187,10 +158,7 @@ class _UserProfileState extends State<UserProfile> {
                                       ),
                                       Text(
                                         'Описание',
-                                        style: TextStyle(
-                                          color: lightGreyGood,
-                                          fontSize: 15,
-                                        ),
+                                        style: profileNameDescription,
                                       ),
                                     ],
                                   ),

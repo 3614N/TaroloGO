@@ -1,11 +1,12 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
-import 'package:tarologo/classes/tarot_class.dart';
+import 'package:tarologo/classes/tarot.dart';
 import 'package:tarologo/screens/service/tarot_screen.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/styles/colors/text_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:tarologo/styles/icons/icons.dart';
+import 'package:tarologo/styles/text_styles/text_styles.dart';
 
 // ignore: must_be_immutable
 class ServiceCard extends StatefulWidget {
@@ -42,7 +43,7 @@ class _ServiceCardState extends State<ServiceCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
+      padding: const EdgeInsets.fromLTRB(0, 10, 0, 8),
       child: GestureDetector(
         onTap: () {
           setState(() {
@@ -79,8 +80,8 @@ class _ServiceCardState extends State<ServiceCard> {
                 Padding(
                   padding: const EdgeInsets.only(right: 15),
                   child: Container(
-                    width: 120,
-                    height: 120,
+                    width: 130,
+                    height: 130,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
@@ -102,11 +103,8 @@ class _ServiceCardState extends State<ServiceCard> {
                       children: [
                         Container(
                           child: Text(
-                            widget.firstName + ' ' + widget.secondName,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 19,
-                            ),
+                            '${widget.firstName} ${widget.secondName}',
+                            style: serviceCardTarotName,
                           ),
                         ),
                         SizedBox(
@@ -117,8 +115,7 @@ class _ServiceCardState extends State<ServiceCard> {
                                 maxLines: 3,
                                 overflow: TextOverflow.ellipsis,
                                 widget.description,
-                                style:
-                                    TextStyle(color: yellowText, fontSize: 13),
+                                style: serviceCardTarotDescription,
                               ),
                             ),
                           ),

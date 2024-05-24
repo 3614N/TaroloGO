@@ -1,4 +1,4 @@
-import 'package:tarologo/classes/tarot_class.dart';
+import 'package:tarologo/classes/tarot.dart';
 
 Service firstEzoGadalka = Service(
     id: 1,
