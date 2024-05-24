@@ -54,118 +54,120 @@ class _ContactMessageState extends State<ContactMessage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // onTap: () {
-      //   Navigator.push(
-      //     context,
-      //     MaterialPageRoute(
-      //         builder: (context) => Chat(
-      //               id: widget.id,
-      //             )),
-      //   );
-      // },
-      child: Padding(
-        padding: const EdgeInsets.only(
-          left: 15,
-          right: 10,
-        ),
-        child: Column(
-          children: [
-            SizedBox(
-              width: double.infinity,
-              height: 70,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(90)),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(90),
-                          child: FittedBox(
-                            fit: BoxFit.cover,
-                            child: Image.asset(
-                                profiles[widget.senderId - 1].photo),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => screen_chat.Chat()),
+        );
+      },
+      child: Container(
+        color: greyGood,
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 15,
+            right: 10,
+          ),
+          child: Column(
+            children: [
+              SizedBox(
+                width: double.infinity,
+                height: 70,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(90)),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(90),
+                            child: FittedBox(
+                              fit: BoxFit.cover,
+                              child: Image.asset(
+                                  profiles[widget.senderId - 1].photo),
+                            ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10, left: 12),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '${profiles[widget.senderId - 1].firstName} ${profiles[widget.senderId - 1].secondName}',
-                              style: allChatsName,
-                            ),
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.6,
-                              child: Text(
-                                compileAndSort(allChats[widget.index])
-                                    .last
-                                    .text,
-                                overflow: TextOverflow.ellipsis,
-                                style: allChatsMessage,
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10, left: 12),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '${profiles[widget.senderId - 1].firstName} ${profiles[widget.senderId - 1].secondName}',
+                                style: allChatsName,
                               ),
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.6,
+                                child: Text(
+                                  compileAndSort(allChats[widget.index])
+                                      .last
+                                      .text,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: allChatsMessage,
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Row(
+                          children: [
+                            compileAndSort(allChats[widget.index])
+                                        .last
+                                        .senderId ==
+                                    3
+                                ? Icon(
+                                    Icons.check,
+                                    color: Colors.white,
+                                    size: 12,
+                                  )
+                                : SizedBox(),
+                            Text(
+                              '20:31',
+                              style: allChatsTime,
                             ),
                           ],
                         ),
-                      )
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Row(
-                        children: [
-                          compileAndSort(allChats[widget.index])
-                                      .last
-                                      .senderId ==
-                                  3
-                              ? Icon(
-                                  Icons.check,
-                                  color: Colors.white,
-                                  size: 12,
-                                )
-                              : SizedBox(),
-                          Text(
-                            '20:31',
-                            style: allChatsTime,
-                          ),
-                        ],
-                      ),
-                      compileAndSort(allChats[widget.index]).last.senderId != 3
-                          ? Container(
-                              alignment: Alignment.center,
-                              width: 25,
-                              height: 16,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: lightGreyGood),
-                              child: Text(
-                                countLastMessagesFromSender(
-                                        compileAndSort(allChats[widget.index]),
-                                        1)
-                                    .toString(),
-                                style: allChatsLastMessagesCounter,
-                              ),
-                            )
-                          : Container(
-                              alignment: Alignment.center,
-                              width: 25,
-                              height: 16,
-                            )
-                    ],
-                  )
-                ],
+                        compileAndSort(allChats[widget.index]).last.senderId !=
+                                3
+                            ? Container(
+                                alignment: Alignment.center,
+                                width: 25,
+                                height: 16,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: lightGreyGood),
+                                child: Text(
+                                  countLastMessagesFromSender(
+                                          compileAndSort(
+                                              allChats[widget.index]),
+                                          1)
+                                      .toString(),
+                                  style: allChatsLastMessagesCounter,
+                                ),
+                              )
+                            : Container(
+                                alignment: Alignment.center,
+                                width: 25,
+                                height: 16,
+                              )
+                      ],
+                    )
+                  ],
+                ),
               ),
-            ),
-            goodLine,
-          ],
+              goodLine,
+            ],
+          ),
         ),
       ),
     );

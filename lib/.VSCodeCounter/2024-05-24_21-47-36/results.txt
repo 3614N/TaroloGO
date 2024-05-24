@@ -1,0 +1,70 @@
+Date : 2024-05-24 21:47:36
+Directory : c:\Projects\reps\TaroloGO\lib
+Total : 26 files,  1659 codes, 42 comments, 136 blanks, all 1837 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Dart     |         26 |      1,659 |         42 |        136 |      1,837 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                    | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                       |         26 |      1,659 |         42 |        136 |      1,837 |
+| . (Files)                                                               |          1 |         15 |          0 |          4 |         19 |
+| classes                                                                 |          2 |         62 |          1 |          9 |         72 |
+| functions                                                               |          1 |          0 |          0 |          2 |          2 |
+| routing                                                                 |          1 |         49 |          1 |          2 |         52 |
+| screens                                                                 |          9 |        677 |          7 |         46 |        730 |
+| screens (Files)                                                         |          1 |         65 |          1 |          4 |         70 |
+| screens\auth                                                            |          2 |         24 |          0 |          8 |         32 |
+| screens\chat                                                            |          2 |        124 |          2 |         11 |        137 |
+| screens\other                                                           |          1 |        176 |          1 |          5 |        182 |
+| screens\service                                                         |          3 |        288 |          3 |         18 |        309 |
+| styles                                                                  |          6 |        208 |         27 |         44 |        279 |
+| styles (Files)                                                          |          1 |        142 |         27 |         24 |        193 |
+| styles\colors                                                           |          2 |          5 |          0 |          4 |          9 |
+| styles\icons                                                            |          1 |          7 |          0 |          2 |          9 |
+| styles\text_styles                                                      |          1 |         47 |          0 |         12 |         59 |
+| styles\widgets                                                          |          1 |          7 |          0 |          2 |          9 |
+| test_lists                                                              |          3 |        260 |          0 |         10 |        270 |
+| widgets                                                                 |          3 |        388 |          6 |         19 |        413 |
+| widgets\messenger                                                       |          1 |        160 |          2 |          9 |        171 |
+| widgets\profile                                                         |          2 |        228 |          4 |         10 |        242 |
++-------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                | language | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\Projects\reps\TaroloGO\lib\classes\message.dart                      | Dart     |         24 |          0 |          4 |         28 |
+| c:\Projects\reps\TaroloGO\lib\classes\tarot.dart                        | Dart     |         38 |          1 |          5 |         44 |
+| c:\Projects\reps\TaroloGO\lib\functions\requests.dart                   | Dart     |          0 |          0 |          2 |          2 |
+| c:\Projects\reps\TaroloGO\lib\main.dart                                 | Dart     |         15 |          0 |          4 |         19 |
+| c:\Projects\reps\TaroloGO\lib\routing\app_routing.dart                  | Dart     |         49 |          1 |          2 |         52 |
+| c:\Projects\reps\TaroloGO\lib\screens\auth\sign_in.dart                 | Dart     |         12 |          0 |          4 |         16 |
+| c:\Projects\reps\TaroloGO\lib\screens\auth\sign_up.dart                 | Dart     |         12 |          0 |          4 |         16 |
+| c:\Projects\reps\TaroloGO\lib\screens\chat\chat.dart                    | Dart     |         61 |          1 |          5 |         67 |
+| c:\Projects\reps\TaroloGO\lib\screens\chat\messenger.dart               | Dart     |         63 |          1 |          6 |         70 |
+| c:\Projects\reps\TaroloGO\lib\screens\navigation_bar.dart               | Dart     |         65 |          1 |          4 |         70 |
+| c:\Projects\reps\TaroloGO\lib\screens\other\profile.dart                | Dart     |        176 |          1 |          5 |        182 |
+| c:\Projects\reps\TaroloGO\lib\screens\service\favorites.dart            | Dart     |         41 |          0 |          5 |         46 |
+| c:\Projects\reps\TaroloGO\lib\screens\service\tarot_list.dart           | Dart     |         76 |          1 |          6 |         83 |
+| c:\Projects\reps\TaroloGO\lib\screens\service\tarot_screen.dart         | Dart     |        171 |          2 |          7 |        180 |
+| c:\Projects\reps\TaroloGO\lib\styles\colors\main_colors.dart            | Dart     |          3 |          0 |          2 |          5 |
+| c:\Projects\reps\TaroloGO\lib\styles\colors\text_colors.dart            | Dart     |          2 |          0 |          2 |          4 |
+| c:\Projects\reps\TaroloGO\lib\styles\icons\icons.dart                   | Dart     |          7 |          0 |          2 |          9 |
+| c:\Projects\reps\TaroloGO\lib\styles\salomon_bottom_bar.dart            | Dart     |        142 |         27 |         24 |        193 |
+| c:\Projects\reps\TaroloGO\lib\styles\text_styles\text_styles.dart       | Dart     |         47 |          0 |         12 |         59 |
+| c:\Projects\reps\TaroloGO\lib\styles\widgets\good_line.dart             | Dart     |          7 |          0 |          2 |          9 |
+| c:\Projects\reps\TaroloGO\lib\test_lists\chat.dart                      | Dart     |        201 |          0 |          4 |        205 |
+| c:\Projects\reps\TaroloGO\lib\test_lists\tarot_profile.dart             | Dart     |         28 |          0 |          2 |         30 |
+| c:\Projects\reps\TaroloGO\lib\test_lists\tarot_services.dart            | Dart     |         31 |          0 |          4 |         35 |
+| c:\Projects\reps\TaroloGO\lib\widgets\messenger\contact.dart            | Dart     |        160 |          2 |          9 |        171 |
+| c:\Projects\reps\TaroloGO\lib\widgets\profile\profile_service_card.dart | Dart     |         56 |          2 |          5 |         63 |
+| c:\Projects\reps\TaroloGO\lib\widgets\profile\tarot_services.dart       | Dart     |        172 |          2 |          5 |        179 |
+| Total                                                                   |          |      1,659 |         42 |        136 |      1,837 |
++-------------------------------------------------------------------------+----------+------------+------------+------------+------------+
