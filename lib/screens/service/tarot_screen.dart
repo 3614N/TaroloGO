@@ -48,7 +48,7 @@ class _TarotProfileState extends State<TarotProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: greyGood,
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: Stack(
@@ -59,6 +59,17 @@ class _TarotProfileState extends State<TarotProfile> {
               child: Image.asset(
                 widget.photo,
                 fit: BoxFit.cover,
+              ),
+            ),
+            SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: IconButton(
+                  icon: Icon(Icons.arrow_back_ios_new_rounded),
+                  onPressed: () {
+                    Navigator.of(context).pop;
+                  },
+                ),
               ),
             ),
             Positioned(
@@ -73,16 +84,16 @@ class _TarotProfileState extends State<TarotProfile> {
                       height: 250,
                     ),
                     BlurryContainer(
-                      blur: 10,
-                      color: greyGood.withOpacity(0.9),
+                      blur: 20,
+                      color: greyGood.withOpacity(0.7),
                       borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(25),
-                        topRight: Radius.circular(25),
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30),
                       ),
                       child: Column(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(top: 12, bottom: 3),
+                            padding: const EdgeInsets.only(top: 5, bottom: 2),
                             child: Text(
                               '${widget.firstName} ${widget.secondName}',
                               style: TextStyle(
