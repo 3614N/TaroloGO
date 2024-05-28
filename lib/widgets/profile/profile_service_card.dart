@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:tarologo/classes/tarot.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/styles/colors/text_colors.dart';
-import 'package:tarologo/styles/text_styles/text_styles.dart';
 
 // ignore: must_be_immutable
 class TarotService extends StatelessWidget {

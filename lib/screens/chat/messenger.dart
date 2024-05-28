@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/styles/colors/text_colors.dart';
 import 'package:tarologo/test_lists/chat.dart';
@@ -22,7 +23,13 @@ class _MessengerState extends State<Messenger> {
               senderId: allChats[index][0].senderId == 3
                   ? allChats[index][0].recieverId
                   : allChats[index][0].senderId,
+              onTap: () =>
+                  navigateToChat(context, index), // Передача функции навигации
             ));
+  }
+
+  void navigateToChat(BuildContext context, int chatId) {
+    context.go('/chat/$chatId');
   }
 
   @override

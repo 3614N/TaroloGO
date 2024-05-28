@@ -1,0 +1,1 @@
+ /home/dimkers/Projects/reps/TaroloGO/.dart_tool/flutter_build/2ae9b26c296845435ffddb4a01233712/native_assets.yaml: 

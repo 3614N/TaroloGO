@@ -4,6 +4,7 @@ import 'package:tarologo/screens/chat/messenger.dart';
 import 'package:tarologo/screens/service/favorites.dart';
 import 'package:tarologo/screens/other/profile.dart';
 import 'package:tarologo/screens/service/tarot_list.dart';
+import 'package:tarologo/screens/chat/chat.dart' as screen_chat;
 
 final router = GoRouter(
   initialLocation: '/search',
@@ -32,7 +33,7 @@ final router = GoRouter(
         StatefulShellBranch(
           routes: [
             GoRoute(
-              path: '/chat',
+              path: '/messenger',
               builder: (context, state) => const Messenger(),
             ),
           ],
@@ -46,6 +47,14 @@ final router = GoRouter(
           ],
         ),
       ],
+    ),
+    // Separate route for Chat screen without navigation bar
+    GoRoute(
+      path: '/chat/:chatId',
+      builder: (context, state) {
+        final chatId = int.parse(state.pathParameters['chatId']!);
+        return screen_chat.Chat(chatId: chatId);
+      },
     ),
   ],
 );

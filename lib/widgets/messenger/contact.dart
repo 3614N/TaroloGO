@@ -1,21 +1,22 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:tarologo/screens/chat/chat.dart' as screen_chat;
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/styles/text_styles/text_styles.dart';
 import 'package:tarologo/styles/widgets/good_line.dart';
 import 'package:tarologo/test_lists/chat.dart';
 import 'package:tarologo/test_lists/tarot_profile.dart';
 
-// ignore: must_be_immutable
 class ContactMessage extends StatefulWidget {
-  int senderId;
-  int index;
-  ContactMessage({
+  final int senderId;
+  final int index;
+  final VoidCallback onTap;
+
+  const ContactMessage({
     super.key,
     required this.index,
     required this.senderId,
+    required this.onTap,
   });
 
   @override
@@ -26,15 +27,7 @@ class _ContactMessageState extends State<ContactMessage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => screen_chat.Chat(
-                    chatId: widget.index,
-                  )),
-        );
-      },
+      onTap: widget.onTap,
       child: Container(
         color: greyGood,
         child: Padding(

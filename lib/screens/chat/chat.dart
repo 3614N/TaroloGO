@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/test_lists/chat.dart';
+import 'package:tarologo/test_lists/tarot_profile.dart';
 import 'package:tarologo/widgets/messenger/message.dart';
 
 class Chat extends StatefulWidget {
@@ -38,11 +40,13 @@ class _ChatState extends State<Chat> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: null,
       appBar: AppBar(
+        surfaceTintColor: greyGood,
         backgroundColor: greyGood,
         leading: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              context.push('/messenger');
             },
             icon: Icon(
               Icons.arrow_back_ios,
@@ -57,17 +61,29 @@ class _ChatState extends State<Chat> {
           ),
         ],
         title: Text(
-          'Апполинария Темная',
+          '${profiles[widget.chatId].firstName} ${profiles[widget.chatId].secondName}',
           style: TextStyle(color: Colors.white, fontSize: 18),
         ),
       ),
       backgroundColor: greyGood,
       body: SafeArea(
-        child: ListView(
-          controller: _scrollController,
-          children: generateMessages(allChats[widget.chatId].length),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: ListView(
+                controller: _scrollController,
+                children: generateMessages(allChats[widget.chatId].length),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: Chat(chatId: 1),
+  ));
 }
