@@ -19,7 +19,9 @@ class _MessengerState extends State<Messenger> {
         count,
         (index) => ContactMessage(
               index: index,
-              senderId: allChats[index].receivedMessages[0].senderId,
+              senderId: allChats[index][0].senderId == 3
+                  ? allChats[index][0].recieverId
+                  : allChats[index][0].senderId,
             ));
   }
 

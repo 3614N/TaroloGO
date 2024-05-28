@@ -26,36 +26,34 @@ class TarotService extends StatelessWidget {
           color: lightGreyGood,
         ),
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    service.serviceName,
-                    style: TextStyle(
-                      color: yellowText,
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      service.serviceName,
+                      style: TextStyle(
+                        color: yellowText,
+                      ),
                     ),
+                    Text(
+                      '${service.price}₽',
+                      style: TextStyle(
+                        color: yellowText,
+                      ),
+                    ),
+                  ],
+                ),
+                Text(
+                  service.serviceDescription,
+                  style: TextStyle(
+                    color: Color(0xFF827F7F),
                   ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.78,
-                    child: Text(
-                      service.serviceDescription,
-                      style: tarotServiceDesctiption,
-                    ),
-                  )
-                ],
-              ),
-              Text(
-                service.price.toString() + '₽',
-                style: tarotServiceDesctiption,
-              )
-            ],
-          ),
-        ),
+                )
+              ],
+            )),
       ),
     );
   }

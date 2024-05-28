@@ -15,13 +15,3 @@ class Message {
     required this.isChecked,
   });
 }
-
-class Chat {
-  List<Message> sentMessages;
-  List<Message> receivedMessages;
-
-  Chat({
-    required this.receivedMessages,
-    required this.sentMessages,
-  });
-}

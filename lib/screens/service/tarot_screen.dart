@@ -163,7 +163,7 @@ class _TarotProfileState extends State<TarotProfile> {
                 child: GestureDetector(
                   child: Icon(
                     Icons.arrow_back_ios_new_rounded,
-                    color: yellowText,
+                    color: lightGreyGood,
                   ),
                   onTap: () {
                     Navigator.pop(context);

@@ -16,3 +16,4 @@ class TaroloGO extends StatelessWidget {
     );
   }
 }
+ 

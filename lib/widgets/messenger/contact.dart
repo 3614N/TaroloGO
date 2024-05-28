@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:tarologo/classes/message.dart';
 import 'package:tarologo/screens/chat/chat.dart' as screen_chat;
 import 'package:tarologo/styles/colors/main_colors.dart';
 import 'package:tarologo/styles/text_styles/text_styles.dart';
@@ -24,40 +23,16 @@ class ContactMessage extends StatefulWidget {
 }
 
 class _ContactMessageState extends State<ContactMessage> {
-  List<Message> compileAndSort(Chat chat) {
-    List<Message> allMessages = [
-      ...chat.receivedMessages,
-      ...chat.sentMessages
-    ];
-
-    allMessages.sort((a, b) {
-      DateTime dateTimeA = DateTime.parse(a.time);
-      DateTime dateTimeB = DateTime.parse(b.time);
-      return dateTimeA.compareTo(dateTimeB);
-    });
-
-    return allMessages;
-  }
-
-  int countLastMessagesFromSender(List<Message> messages, int senderId) {
-    int count = 0;
-    for (int i = messages.length - 1; i >= 0; i--) {
-      if (messages[i].senderId == senderId) {
-        count++;
-      } else {
-        break;
-      }
-    }
-    return count;
-  }
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => screen_chat.Chat()),
+          MaterialPageRoute(
+              builder: (context) => screen_chat.Chat(
+                    chatId: widget.index,
+                  )),
         );
       },
       child: Container(
@@ -103,9 +78,7 @@ class _ContactMessageState extends State<ContactMessage> {
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.6,
                                 child: Text(
-                                  compileAndSort(allChats[widget.index])
-                                      .last
-                                      .text,
+                                  allChats[widget.index].last.text,
                                   overflow: TextOverflow.ellipsis,
                                   style: allChatsMessage,
                                 ),
@@ -116,52 +89,17 @@ class _ContactMessageState extends State<ContactMessage> {
                       ],
                     ),
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Row(
-                          children: [
-                            compileAndSort(allChats[widget.index])
-                                        .last
-                                        .senderId ==
-                                    3
-                                ? Icon(
-                                    Icons.check,
-                                    color: Colors.white,
-                                    size: 12,
-                                  )
-                                : SizedBox(),
-                            Text(
-                              '20:31',
-                              style: allChatsTime,
-                            ),
-                          ],
+                        Text(
+                          allChats[widget.index].last.time.substring(11, 16),
+                          style: allChatsTime,
                         ),
-                        compileAndSort(allChats[widget.index]).last.senderId !=
-                                3
-                            ? Container(
-                                alignment: Alignment.center,
-                                width: 25,
-                                height: 16,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: lightGreyGood),
-                                child: Text(
-                                  countLastMessagesFromSender(
-                                          compileAndSort(
-                                              allChats[widget.index]),
-                                          1)
-                                      .toString(),
-                                  style: allChatsLastMessagesCounter,
-                                ),
-                              )
-                            : Container(
-                                alignment: Alignment.center,
-                                width: 25,
-                                height: 16,
-                              )
+                        SizedBox(
+                          height: 20,
+                        )
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),

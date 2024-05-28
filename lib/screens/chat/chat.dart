@@ -2,17 +2,39 @@
 
 import 'package:flutter/material.dart';
 import 'package:tarologo/styles/colors/main_colors.dart';
+import 'package:tarologo/test_lists/chat.dart';
+import 'package:tarologo/widgets/messenger/message.dart';
 
 class Chat extends StatefulWidget {
-  const Chat({
-    super.key,
-  });
+  final int chatId;
+  const Chat({super.key, required this.chatId});
 
   @override
   State<Chat> createState() => _ChatState();
 }
 
 class _ChatState extends State<Chat> {
+  final ScrollController _scrollController = ScrollController();
+
+  List<Widget> generateMessages(int count) {
+    return List.generate(
+        count,
+        (index) => Message(
+              senderId: allChats[widget.chatId][index].senderId,
+              text: allChats[widget.chatId][index].text,
+              time: allChats[widget.chatId][index].time,
+            ));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    // Scroll to the end of the list when the widget is built
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,32 +56,17 @@ class _ChatState extends State<Chat> {
             onPressed: () {},
           ),
         ],
-        title: Row(
-          children: [
-            SizedBox(
-              width: 50,
-              height: 50,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(90),
-                child: FittedBox(
-                  fit: BoxFit.cover,
-                  child: Image.asset('assets/tarot_photos/2.jpg'),
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text(
-              'Апполинария Темная',
-              style: TextStyle(color: Colors.white, fontSize: 18),
-            ),
-          ],
+        title: Text(
+          'Апполинария Темная',
+          style: TextStyle(color: Colors.white, fontSize: 18),
         ),
       ),
       backgroundColor: greyGood,
       body: SafeArea(
-        child: Container(),
+        child: ListView(
+          controller: _scrollController,
+          children: generateMessages(allChats[widget.chatId].length),
+        ),
       ),
     );
   }
