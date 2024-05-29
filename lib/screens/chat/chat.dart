@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -16,8 +16,6 @@ class Chat extends StatefulWidget {
 }
 
 class _ChatState extends State<Chat> {
-  final ScrollController _scrollController = ScrollController();
-
   List<Widget> generateMessages(int count) {
     return List.generate(
         count,
@@ -29,18 +27,8 @@ class _ChatState extends State<Chat> {
   }
 
   @override
-  void initState() {
-    super.initState();
-    // Scroll to the end of the list when the widget is built
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: null,
       appBar: AppBar(
         surfaceTintColor: greyGood,
         backgroundColor: greyGood,
@@ -61,7 +49,8 @@ class _ChatState extends State<Chat> {
           ),
         ],
         title: Text(
-          '${profiles[widget.chatId].firstName} ${profiles[widget.chatId].secondName}',
+          '${profiles[widget.chatId].firstName} '
+          '${profiles[widget.chatId].secondName}',
           style: TextStyle(color: Colors.white, fontSize: 18),
         ),
       ),
@@ -71,19 +60,49 @@ class _ChatState extends State<Chat> {
           children: <Widget>[
             Expanded(
               child: ListView(
-                controller: _scrollController,
                 children: generateMessages(allChats[widget.chatId].length),
               ),
             ),
+            Container(
+              width: double.infinity,
+              height: 60,
+              color: greyGood,
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Icon(
+                    Icons.attachment_outlined,
+                    color: Colors.white,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.8,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: lightGreyGood,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            focusColor: greyGood,
+                            border: InputBorder.none,
+                          ),
+                          cursorColor: greyGood,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
     );
   }
-}
-
-void main() {
-  runApp(MaterialApp(
-    home: Chat(chatId: 1),
-  ));
 }

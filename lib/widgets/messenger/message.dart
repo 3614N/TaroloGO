@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:tarologo/styles/colors/main_colors.dart';
-import 'package:tarologo/test_lists/tarot_profile.dart';
 
 class Message extends StatefulWidget {
   final int senderId;
@@ -22,67 +20,46 @@ class _MessageState extends State<Message> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(5.0),
       child: SizedBox(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: widget.senderId == 3
+              ? CrossAxisAlignment.end
+              : CrossAxisAlignment.start,
           children: [
             Container(
-              width: 50,
-              height: 50,
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(90)),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(90),
-                child: FittedBox(
-                  fit: BoxFit.cover,
-                  child: Image.asset(widget.senderId == 3
-                      ? 'assets/profile_photo/vova.png'
-                      : profiles[widget.senderId - 1].photo),
+              decoration: BoxDecoration(
+                color: widget.senderId == 3
+                    ? Color(0xFF483D8B)
+                    : Color(0xFF2D2D2D),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                  bottomLeft:
+                      widget.senderId == 3 ? Radius.circular(20) : Radius.zero,
+                  bottomRight:
+                      widget.senderId != 3 ? Radius.circular(20) : Radius.zero,
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        widget.senderId == 3
-                            ? 'Миньончик'
-                            : '${profiles[widget.senderId - 1].firstName} ${profiles[widget.senderId - 1].secondName}',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        widget.time.substring(11, 16),
-                        style: TextStyle(color: lightGreyGood),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 3,
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.75,
-                    child: Text(
+              constraints: BoxConstraints(maxWidth: 300),
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
                       widget.text,
-                      style: TextStyle(
-                        color: Colors.grey[200],
-                      ),
+                      style: TextStyle(color: Colors.white),
                     ),
-                  ),
-                ],
+                    Text(
+                      widget.time.substring(11, 16),
+                      style: TextStyle(color: Colors.white, fontSize: 12),
+                    )
+                  ],
+                ),
               ),
-            ),
+            )
           ],
         ),
       ),
