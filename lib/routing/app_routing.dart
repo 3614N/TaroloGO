@@ -1,8 +1,8 @@
 import 'package:go_router/go_router.dart';
+import 'package:tarologo/screens/auth/sign_in.dart';
 import 'package:tarologo/screens/navigation_bar.dart';
 import 'package:tarologo/screens/chat/messenger.dart';
 import 'package:tarologo/screens/service/favorites.dart';
-import 'package:tarologo/screens/other/profile.dart';
 import 'package:tarologo/screens/service/tarot_list.dart';
 import 'package:tarologo/screens/chat/chat.dart' as screen_chat;
 
@@ -42,7 +42,7 @@ final router = GoRouter(
           routes: [
             GoRoute(
               path: '/profile',
-              builder: (context, state) => const UserProfile(),
+              builder: (context, state) => const SignIn(),
             ),
           ],
         ),
