@@ -2,10 +2,11 @@
 
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tarologo/screens/other/profile.dart';
 import 'package:tarologo/test_lists/profile.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -98,15 +99,27 @@ class _SignInState extends State<SignIn> {
                         height: 50,
                       ),
                       GestureDetector(
-                        onTap: () {
-                          if (_mailController.text == user1.email &&
-                              _passwordController.text == user1.password) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const UserProfile()),
-                            );
-                          }
+                        onTap: () async {
+                          var response = await http.get(Uri.parse(
+                              'https://8420-178-66-156-71.ngrok-free.app/'
+                              'message/show_chat/${_mailController.text}/'
+                              'recipient/${_passwordController.text}'));
+                          var jsonResponse = jsonDecode(utf8.decode(response.bodyBytes));
+
+                          for (var message in jsonResponse) {
+                            var messageId = message['message_id'];
+                            var senderId = message['sender_id'];
+                            var recipientId = message['recipient_id'];
+                            var messageText = message['message_text'];
+                            var messageDateSend = message['message_date_send'];
+
+                            print("Message ID: $messageId");
+                            print("Sender ID: $senderId");
+                            print("Recipient ID: $recipientId");
+                            print("Message Text: $messageText");
+                            print("Message Date Send: $messageDateSend");
+                          };
+
                         },
                         child: Container(
                           alignment: Alignment.center,
